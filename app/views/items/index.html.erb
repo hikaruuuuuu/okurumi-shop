@@ -11,30 +11,28 @@
 <div class="top-img">後で画像いれる</div>
 
 <h5>おりがみおくるみ</h5>
+
+<% @items.each do |item| %>
+  <%= link_to "#" do %>
+    <div class="item-img">後で画像いれる</div>
+    <%= item.name %>
+    <%= item.price %>
+  <% end %>
+<% end %>
 <div class="item">
   <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
+  <div class="item-img">商品名</div>
+  <div class="item-img">金額</div>
 </div>
 <div class="item">
   <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
+  <div class="item-img">商品名</div>
+  <div class="item-img">金額</div>
 </div>
 <div class="item">
   <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
+  <div class="item-img">商品名</div>
+  <div class="item-img">金額</div>
 </div>
 
 <h5>オリジナルおくるみをつくる</h5>

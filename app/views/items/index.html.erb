@@ -1,5 +1,5 @@
 <h1>おりがみおくるみ</h1>
-<p>くるむとかわいいおくるみ</p>
+<p>くるむとかわいいおりがみおくるみ</p>
 
 <%= link_to "おりがみおくるみとは" %>
 <%= link_to "会員登録", "#" %>
@@ -11,31 +11,16 @@
 <div class="top-img">後で画像いれる</div>
 
 <h5>おりがみおくるみ</h5>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
-<div class="item">
-  <div class="item-img">後で画像いれる</div>
-  <%= link_to "購入する", "#" %>
-  <%= link_to "カートに追加", "#" %>
-</div>
+
+<% @items.each do |item| %>
+  <%= link_to "#" do %>
+    <div class="item">
+      <%= image_tag item.images[0].variant(resize:'100x100') %>
+      <%= item.name %>
+      <%= item.price %>
+    </div>
+  <% end %>
+<% end %>
 
 <h5>オリジナルおくるみをつくる</h5>
 <%# 自分でカスタマイズもできる %>

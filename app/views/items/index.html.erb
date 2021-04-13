@@ -13,7 +13,7 @@
 <h5>おりがみおくるみ</h5>
 
 <% @items.each do |item| %>
-  <%= link_to "#" do %>
+  <%= link_to  item_orders_path(item) do %>
     <div class="item">
       <%= image_tag item.images[0].variant(resize:'100x100') %>
       <%= item.name %>

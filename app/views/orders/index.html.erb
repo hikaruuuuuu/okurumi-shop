@@ -1,2 +1,8 @@
 <h1>購入確認フォーム</h1>
- <%= @order.name %>
+<%= @item.name %>
+<%= image_tag @item.images[0].variant(resize:'100x100') %>
+<%= @item.price %>
+<%= @item.description %>
+
+<%= form_with model: @order, local: true do |f| %>
+<% end %>

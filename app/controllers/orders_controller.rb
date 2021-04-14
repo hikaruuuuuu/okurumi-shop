@@ -5,7 +5,14 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @item = Item.find(params[:item_id])
     UserInfo.create(user_info_params)
+    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
+    Payjp::Charge.create(
+      amount: @item.price,
+      card: params[:token],
+      currency: 'jpy'
+    )
   end
 
   private

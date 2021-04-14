@@ -14,9 +14,9 @@
     <%= image_tag 'amex-logomark-img-04.gif', class: 'card-logo'%>
   </div>
   <div>
-    <%= f.text_area 'exp_month', placeholder:"例)3" %>
+    <%= f.text_field 'exp_month', placeholder:"例)3" %>
     <p>月</p>
-    <%= f.text_area 'exp_year', placeholder:"例)23" %>
+    <%= f.text_field 'exp_year', placeholder:"例)23" %>
     <p>年</p>
   </div>
   <%= f.text_field "cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>

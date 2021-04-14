@@ -21,6 +21,8 @@
   </div>
   <%= f.text_field "cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
   <h2>お客様情報</h2>
+  <%= f.text_field 'first_name', placeholder:"例）山田" %>
+  <%= f.text_field 'last_name', placeholder:"例）花子", maxlength:"8" %>
   <%= f.text_field 'post_code', placeholder:"例）123-4567", maxlength:"8" %>
   <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"prefecture"}) %>
   <%= f.text_field 'address', placeholder:"例）横浜市緑区"%>

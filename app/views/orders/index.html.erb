@@ -4,7 +4,7 @@
 <%= @item.price %>
 <%= @item.description %>
 
-<%= form_with model: @order, local: true do |f| %>
+<%= form_with model: @order, url: item_orders_path, local: true do |f| %>
   <h2>クレジット情報入力</h2>
   <%= f.text_field 'number', placeholder:"カード番号(半角英数字)", maxlength:"16" %>
   <div>

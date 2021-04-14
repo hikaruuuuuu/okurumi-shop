@@ -20,6 +20,8 @@ const pay = () => {
         const renderDom = document.getElementById("card-form");
         const tokenObj = `<input value=${token} name='token' type="hidden">`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
+      } else {
+        alert(`カード登録に失敗しました。もう一度入力してください。`)
       }
 
       document.getElementById("order_number").removeAttribute("name");

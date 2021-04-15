@@ -6,14 +6,20 @@ class OrdersController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-    Payjp::Charge.create(
-      amount: @item.price,
-      card: params[:token],
-      currency: 'jpy'
-    )
-    @userInfo = UserInfo.create(user_info_params)
-    Order.create(order_params)
+    @userInfo = UserInfo.new(user_info_params)
+    @order = Order.new(order_params)
+    if @order.valid? && @userInfo.valid?
+      @userInfo.save
+      @order.save
+      Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
+      Payjp::Charge.create(
+        amount: @item.price,
+        card: params[:token],
+        currency: 'jpy'
+      )
+    else
+      render :index
+    end
   end
 
   private

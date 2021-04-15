@@ -9,8 +9,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
-    redirect_to root_path, notice: '商品登録が完了しました'
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path, notice: '商品登録が完了しました'
+    else
+      render :new
+    end
   end
 
   private

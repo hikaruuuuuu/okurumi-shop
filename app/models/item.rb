@@ -6,6 +6,6 @@ class Item < ApplicationRecord
     validates :images
     validates :name
     validates :description
-    validates :price, numericality: { only_integer: true, in: 1..9_999_999, message: 'は¥300〜9,999,999に設定してください', allow_blank: true }
+    validates_inclusion_of :price, in: 1..9_999_999, message: 'は¥1〜9,999,999に設定してください'
   end
 end

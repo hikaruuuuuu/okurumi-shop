@@ -6,17 +6,10 @@ class OrdersController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    @userInfo = UserInfo.new(user_info_params)
-    @order = Order.new(order_params)
-    if @order.valid? && @userInfo.valid?
-      @userInfo.save
-      @order.save
-      Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-      Payjp::Charge.create(
-        amount: @item.price,
-        card: params[:token],
-        currency: 'jpy'
-      )
+    @user_order = UserOrder.new(user_order_params)
+    if @user_order.valid?
+      @user_order.save
+      pay_item
     else
       render :index
     end
@@ -24,11 +17,17 @@ class OrdersController < ApplicationController
 
   private
 
-  def  user_info_params
-    params.require(:order).permit(:first_name, :last_name, :post_code, :prefecture_id, :address, :building_number, :building_name, :phone_number)
+  def pay_item
+    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
+    Payjp::Charge.create(
+      amount: @item.price,
+      card: params[:token],
+      currency: 'jpy'
+    )
   end
 
-  def order_params
-    params.permit(:item_id).merge(user_info_id: @userInfo.id)
+  def  user_order_params
+    params.require(:order).permit(:first_name, :last_name, :post_code, :prefecture_id, :address, :building_number, :building_name, :phone_number).merge(item_id: params[:item_id])
   end
+
 end

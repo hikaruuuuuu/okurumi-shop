@@ -5,11 +5,11 @@ class UserOrder
   with_options presence: true do
     validates :first_name
     validates :last_name
-    validates :post_code
+    validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'は、-を含む半角数字で入力してください', allow_blank: true }
     validates :prefecture_id
     validates :address
     validates :building_number
-    validates :phone_number
+    validates :phone_number, format: { with: /\d/, message: 'は半角数字で入力してください', allow_blank: true },length: { maximum: 11, message: 'が長すぎます', allow_blank: true }
     validates :item_id
     validates :token
   end

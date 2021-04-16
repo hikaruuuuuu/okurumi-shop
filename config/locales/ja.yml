@@ -6,6 +6,11 @@ ja:
         name: 商品名
         description: 商品説明
         price: 商品金額
+      
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード(確認用)
 
   activemodel:
     attributes:

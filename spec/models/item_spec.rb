@@ -16,6 +16,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("商品名を入力してください")
       end
+      it "imageが空" do
+        @item.images = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("商品画像を1枚以上登録してください")
+      end
       it "descriptionが空" do
         @item.description = ""
         @item.valid?

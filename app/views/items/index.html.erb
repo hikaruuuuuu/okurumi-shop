@@ -19,24 +19,77 @@
   <div class="header-bottom">
     <p class="shop-nav">おくるみshopとは</p>
     <ul class="nav">
+      <li>特集</li>
       <li>ランキング</li>
-      <li>ギフト</li>
+      <li>新着商品</li>
     </ul>
   </div>
 </header>
 
 <%= image_tag "top-img.jpg", class: "top-img" %>
-<h5>おりがみおくるみ</h5>
 
-<% @items.each do |item| %>
-  <%= link_to  item_orders_path(item) do %>
-    <div class="item">
-      <%= image_tag item.images[0].variant(resize:'100x100') %>
-      <%= item.name %>
-      <%= item.price %>
-    </div>
-  <% end %>
-<% end %>
+<div class="infomation">
+  infomationの表示
+</div>
+
+<div class="main-box">
+  <h2>特集</h2>
+  <ul class="pickup">
+    <li>
+      <%= image_tag "coon.jpeg", width: '300px', height: '200px' %>
+      <p>Vegitable</p>
+    </li>
+    <li>
+      <%= image_tag "animal.webp", width: '300px', height: '200px' %>
+      <p>Animal</p>
+    </li>
+    <li>
+      <%= image_tag "gift.webp", width: '300px', height: '200px' %>
+      <p>Gift</p>
+    </li>
+  </ul>
+  <h2>ランキング</h2>
+  <ul class="pickup">
+    <li>
+      <%= image_tag "coon.jpeg", width: '200px', height: '200px' %>
+      <p>Vegitable</p>
+    </li>
+    <li>
+      <%= image_tag "animal.webp", width: '200x', height: '200px' %>
+      <p>Animal</p>
+    </li>
+    <li>
+      <%= image_tag "gift.webp", width: '200x', height: '200px' %>
+      <p>Gift</p>
+    </li>
+    <li>
+      <%= image_tag "gift.webp", width: '200x', height: '200px' %>
+      <p>Gift</p>
+    </li>
+    <li>
+      <%= image_tag "gift.webp", width: '200x', height: '200px' %>
+      <p>Gift</p>
+    </li>
+  </ul>
+  <h2>新着商品</h2>
+  <ul class="pickup">
+    <% @items.each do |item| %>
+      <%= link_to  item_orders_path(item) do %>
+          <%= image_tag item.images[0].variant(resize:'200x200') %>
+        <li>
+          <%= item.name %>
+          <%= item.price %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+
+</div>
+
+
+<br>
+<br>
 
 <h5>オリジナルおくるみをつくる</h5>
 <%# 自分でカスタマイズもできる %>

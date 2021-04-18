@@ -1,20 +1,35 @@
-<%= image_tag "title-logo.png", class: "title-logo" %>
+<header>
+  <div class="header-top">
+    <%= image_tag "title-logo.png", class: "title-logo" %>
+    <div class="right-header">
+      <% if user_signed_in? %>
+        <%= link_to current_user.name, "#" %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "会員登録", new_user_registration_path %>
+      <% end %>
+      <%= link_to "#" do %>
+        <i class="material-icons">search</i>
+      <% end %>
+      <%= link_to "#" do %>
+        <i class="material-icons">shopping_cart</i>
+      <% end %>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <p class="shop-nav">おくるみshopとは</p>
+    <ul class="nav">
+      <li>ランキング</li>
+      <li>ギフト</li>
+    </ul>
+  </div>
+</header>
 
-<p>くるむとかわいいおりがみおくるみ</p>
 
-<%= link_to "おりがみおくるみとは" %>
-<% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "会員登録", new_user_registration_path %>
-<% end %>
-<%= link_to "検索", "#" %>
-<%= link_to "ショッピングカート", "#" %>
 
-<%= link_to "商品を登録する", new_item_path %>
+<%# <%= link_to "商品を登録する", new_item_path %>
 
-<div class="top-img">後で画像いれる</div>
+<%# <div class="top-img">後で画像いれる</div> %>
 
 <h5>おりがみおくるみ</h5>
 

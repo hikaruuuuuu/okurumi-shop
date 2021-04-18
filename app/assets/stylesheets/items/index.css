@@ -43,3 +43,9 @@ body {
 .nav>li {
   margin-left: 20px;
 }
+
+.top-img {
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+}

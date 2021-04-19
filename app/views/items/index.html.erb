@@ -30,7 +30,7 @@
   <div class="top-box">
     <%= image_tag "top-img.jpg", class: "top-img" %>
 
-    <div class="infomation">
+    <div class="information">
       infomationの表示
     </div>
   </div>
@@ -39,57 +39,35 @@
     <h2>特集</h2>
     <ul class="pickup">
       <li>
-        <%= image_tag "coon.jpeg", width: '300px', height: '200px' %>
+        <%= image_tag "coon.jpeg" %>
         <p>Vegitable</p>
       </li>
       <li>
-        <%= image_tag "animal.webp", width: '300px', height: '200px' %>
+        <%= image_tag "animal.webp" %>
         <p>Original</p>
       </li>
       <li>
-        <%= image_tag "gift.webp", width: '300px', height: '200px' %>
+        <%= image_tag "gift.webp" %>
         <p>Gift</p>
       </li>
     </ul>
     <h2>ランキング</h2>
-    <ul class="pickup">
-      <li>
-        <%= link_to "#" do %>
-          <%= image_tag "coon.jpeg", width: '200px', height: '200px' %>
-          <p>Vegitable</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-          <%= image_tag "animal.webp", width: '200x', height: '200px' %>
-          <p>Animal</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-          <%= image_tag "gift.webp", width: '200x', height: '200px' %>
-          <p>Gift</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-          <%= image_tag "gift.webp", width: '200x', height: '200px' %>
-          <p>Gift</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-          <%= image_tag "gift.webp", width: '200x', height: '200px' %>
-          <p>Gift</p>
-        <% end %>
-      </li>
-    </ul>
-    <h2>新着商品</h2>
-    <ul class="pickup">
+    <ul class="pickup-items">
       <% @items.each do |item| %>
         <li>
           <%= link_to  item_orders_path(item) do %>
-            <%= image_tag item.images[0].variant(resize:'200x200') %>
+            <%= image_tag item.images[0] %>
+            <p><%= item.name %><%= item.price %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <h2>新着商品</h2>
+    <ul class="pickup-items">
+      <% @items.each do |item| %>
+        <li>
+          <%= link_to  item_orders_path(item) do %>
+            <%= image_tag item.images[0] %>
             <p><%= item.name %><%= item.price %></p>
           <% end %>
         </li>

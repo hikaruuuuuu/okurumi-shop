@@ -2,6 +2,10 @@ body {
   color: #737373;
 }
 
+.wrapper {
+  width: 100vw;
+}
+
 header {
   padding: 20px 100px;
 }
@@ -119,4 +123,50 @@ header {
 footer {
   background-color: #f2f2f2;
   width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-left {
+  display: flex;
+}
+
+.footer-left::after{
+  margin-left: 1px;
+  content:"";
+  width:1px;
+  height:330px;
+  left: 55%;
+  background-color: #d9d9d9;
+  position:absolute;
+}
+
+.footer-left>div {
+  margin-right: 100px;
+}
+
+.footer-box {
+  margin-bottom: 20px;
+}
+
+.footer-box>h6 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;}
+
+.footer-box>a {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.footer-box>i {
+  font-size: 12px;
+  margin-left: 10px;
+  color: darkgray;
+}
+
+.footer-box>a:hover {
+  color: darkgray;
+  border-bottom: thin solid darkgray;
 }

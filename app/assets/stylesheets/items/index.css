@@ -170,3 +170,43 @@ footer {
   color: darkgray;
   border-bottom: thin solid darkgray;
 }
+
+.contact {
+  line-height: 40px;
+  border: thin solid #d9d9d9;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.contact:hover {
+  background: gray;
+  color: white;
+}
+
+.footer-right>p {
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.footer-right>div {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icons>i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.icons>i:hover {
+  color: darkgray;
+}

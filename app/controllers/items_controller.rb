@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :if_not_admin, except: [:index]
 
   def index

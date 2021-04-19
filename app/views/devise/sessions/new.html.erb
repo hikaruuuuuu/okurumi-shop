@@ -3,9 +3,11 @@
 
   <div class="devise-form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <% if flash.present? %>
       <div class='login-flash-message'>
         ※<%= flash[:notice] %><%= flash[:alert] %>
       </div>
+      <% end %>
       <div class="field">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", required: true %>
       </div>

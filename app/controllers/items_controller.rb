@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :if_not_admin, except: [:index]
 
   def index
     @items = Item.all
@@ -21,5 +22,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :description, images: [])
+  end
+
+  def if_not_admin
+    redirect_to root_path unless current_user.admin?
   end
 end

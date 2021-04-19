@@ -1,0 +1,64 @@
+.devise-box {
+  padding: 20px 100px;
+  margin-bottom: 150px;
+}
+
+.devise-box>h2 {
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.devise-form {
+  border: thin solid #d9d9d9;
+  padding: 30px;
+  width: 50%;
+}
+
+.field>input {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  font-size: 14px;
+  border: solid 1px #d9d9d9;
+}
+
+.field>input:focus {
+  outline: 0.1px solid gray;
+}
+
+.field>input::placeholder {
+  color: darkgray;
+  letter-spacing: 2px;
+}
+
+.field>input:hover {
+  background-color: #f8f8f8;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forgot-pass {
+  font-size: 12px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.submit {
+  padding: 10px;
+  height: 50px;
+  font-size: 14px;
+  background-color: darkgray;
+  color: #fff;
+  border: none;
+}
+
+.submit:hover {
+  background-color: gray;
+}

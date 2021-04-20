@@ -28,7 +28,7 @@
       <li>
         <%= link_to  item_orders_path(item) do %>
           <%= image_tag item.images[0] %>
-          <p><%= item.name %><%= item.price %></p>
+          <p><%= item.name %><br><%= item.price %></p>
         <% end %>
       </li>
     <% end %>
@@ -39,7 +39,7 @@
       <li>
         <%= link_to  item_orders_path(item) do %>
           <%= image_tag item.images[0] %>
-          <p><%= item.name %><%= item.price %></p>
+          <p><%= item.name %><br><%= item.price %></p>
         <% end %>
       </li>
     <% end %>

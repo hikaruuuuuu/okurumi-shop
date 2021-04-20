@@ -58,3 +58,20 @@ h3 {
 .item-form>form>textarea:focus {
   outline: 0.1px solid gray;
 }
+
+@media screen and (max-width: 480px) {
+  .regist-item {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .item-form {
+    width: 100%;
+    order: 2;
+  }
+
+  #images_list {
+    order: 1;
+  }
+
+}

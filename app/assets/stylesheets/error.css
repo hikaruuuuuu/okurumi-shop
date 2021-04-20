@@ -1,0 +1,16 @@
+.login-flash-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+#error_explanation,
+.error_messages {
+  color: red;
+  font-size: 12px;
+}
+
+#error_explanation>ul>li,
+.error_messages>ul>li {
+  margin-bottom: 5px;
+}

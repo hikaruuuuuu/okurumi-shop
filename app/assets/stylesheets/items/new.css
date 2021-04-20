@@ -1,0 +1,77 @@
+h3 {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.regist-item {
+  display: flex;
+}
+
+#images_list,
+.item-form {
+  width: 50%;
+}
+
+.item-form>form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.item-image {
+  display: none;
+}
+
+.item-image-btn {
+  padding: 20px;
+  background-color: darkgray;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.item-image-btn:hover {
+  background-color: #d9d9d9;
+}
+
+.item-form>form>input,
+.item-form>form>textarea {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  font-size: 14px;
+  border: solid 1px #d9d9d9;
+}
+
+.item-form>form>textarea {
+  height: 80px;
+}
+
+.item-form>form>input:hover,
+.item-form>form>textarea:hover {
+  background-color: #f8f8f8;
+}
+
+.item-form>form>input:focus,
+.item-form>form>textarea:focus {
+  outline: 0.1px solid gray;
+}
+
+@media screen and (max-width: 480px) {
+  .regist-item {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .item-form {
+    width: 100%;
+    order: 2;
+  }
+
+  #images_list {
+    order: 1;
+  }
+
+}

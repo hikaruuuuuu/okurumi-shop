@@ -71,3 +71,14 @@
 .submit:hover {
   background-color: gray;
 }
+
+@media screen and (max-width: 480px) {
+  .devise-box {
+    padding: 10px 50px;
+    margin-bottom: 100px;
+  }
+  
+  .devise-form {
+    width: 100%;
+  }
+}

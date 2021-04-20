@@ -71,9 +71,3 @@
 .submit:hover {
   background-color: gray;
 }
-
-.login-flash-message {
-  color: red;
-  font-size: 12px;
-  margin-bottom: 5px;
-}

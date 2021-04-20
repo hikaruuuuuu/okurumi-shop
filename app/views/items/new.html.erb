@@ -1,10 +1,18 @@
-<h1>商品登録</h1>
+<div class="devise-box">
+<h3>商品登録</h3>
+<div class="item-form">
 <%= form_with model: @item, local: true do |f| %>
   <%= render 'shared/errors', model: @item %>
-  <%= f.file_field :images, multiple: true %>
+  <%= f.label :images do %>
+    <div class="item-image-btn">画像をアップロード</div>
+    <%= f.file_field :images, multiple: true, class: "item-image" %>
+  <% end %>
   <%= f.text_field :name, placeholder: "商品名" %>
   <%= f.text_area :description, placeholder: "商品説明" %>
   <%= f.number_field :price, placeholder: "金額" %>
-  <%= f.submit "購入する" %>
-
+  <div class="actions">
+    <%= f.submit "商品を登録する", class: "submit" %>
+  </div>
 <% end %>
+</div>
+</div>

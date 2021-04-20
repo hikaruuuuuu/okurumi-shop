@@ -26,9 +26,9 @@
   <ul class="pickup-items">
     <% @items.each do |item| %>
       <li>
-        <%= link_to  item_orders_path(item) do %>
+        <%= link_to  item_path(item) do %>
           <%= image_tag item.images[0] %>
-          <p><%= item.name %><br><%= item.price %></p>
+          <p><%= item.name %><br>¥<%= item.price %>(税込)</p>
         <% end %>
       </li>
     <% end %>
@@ -37,9 +37,9 @@
   <ul class="pickup-items">
     <% @items.each do |item| %>
       <li>
-        <%= link_to  item_orders_path(item) do %>
+        <%= link_to  item_path(item) do %>
           <%= image_tag item.images[0] %>
-          <p><%= item.name %><br><%= item.price %></p>
+          <p><%= item.name %><br>¥<%= item.price %>(税込)</p>
         <% end %>
       </li>
     <% end %>

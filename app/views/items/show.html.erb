@@ -1,0 +1,21 @@
+<div class="item-box">
+  <div class="item-images">
+    <div class="item-top-image">
+      <i class="material-icons icon-left">keyboard_arrow_left</i>
+      <%= image_tag @item.images[0], id: "item-top-image" %>
+      <i class="material-icons icon-right">keyboard_arrow_right</i>
+    </div>
+    <%= image_tag "animal.webp" %>
+    <%= image_tag "gift.webp" %>
+    <%= image_tag "top-img.jpg" %>
+  </div>
+  <div class="item-info">
+    <h2><%= @item.name %></h2>
+    <p class="item-price">¥<%= @item.price %><span>(税込)</span></p>
+    <div class="item-description">
+      <%= @item.description %>
+    </div>
+    <div class="add-cart"><i class="material-icons">shopping_cart</i>買い物かごに入れる</div>
+    <div class="back">トップページに戻る</div>
+  </div>
+</div>

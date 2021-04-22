@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_one :user_info
   has_many :orders
+  has_one :cart
 
   validates :name, presence: true
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d_-]+\z/i.freeze

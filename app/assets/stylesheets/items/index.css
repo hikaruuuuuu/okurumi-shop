@@ -249,13 +249,13 @@ footer {
   color: darkgray;
 }
 
-@media screen and (max-width: 480px) { 
+@media screen and (max-width: 600px) { 
 
   header,
   .top-box,
   .main-box,
   .announce {
-    padding: 10px 30px;
+    padding: 10px 10px;
   }
   
   footer,
@@ -312,4 +312,12 @@ footer {
     display: none;
   }
   
+}
+
+@media screen and (min-width:600px) and ( max-width:1000px) { 
+
+  .main-box {
+    padding: 20px 10px;
+  }
+
 }

@@ -2,7 +2,6 @@ class Item < ApplicationRecord
   has_many_attached :images
   has_many :orders
   has_many :cart_items
-  has_many :carts, through: :cart_items
 
   with_options presence: true do
     validates :images, length: { minimum: 1, message: "を1枚以上登録してください" }
